@@ -25,6 +25,9 @@ public_users.post("/register", (req,res) => {
     return res.status(400).json({message: "Username or password not provided"});
   }
 
+
+});
+
 // Get the book list available in the shop
 public_users.get('/', async function (req, res) {
   //Write your code here
@@ -39,10 +42,24 @@ public_users.get('/', async function (req, res) {
 });
 
 // Get book details based on ISBN
-public_users.get('/isbn/:isbn',function (req, res) {
-  //Write your code here
-  return res.status(300).json({message: "Yet to be implemented"});
- });
+public_users.get('/isbn/:isbn', async function (req, res) {
+  // Write your code here
+  let isbn = req.params.isbn;
+
+  try {
+    const response = await axios.get('http://localhost:5000/books');
+
+    if (response.data[isbn]) {
+      return res.status(200).send(JSON.stringify(response.data[isbn], null, 4));
+    } else {
+      return res.status(404).send("No book found with ISBN " + isbn);
+    }
+  } catch (error) {
+    // Handle errors, e.g., network issues or API errors
+    console.error(error);
+    return res.status(500).send("Internal Server Error");
+  }
+});
   
 // Get book details based on author
 public_users.get('/author/:author',function (req, res) {
