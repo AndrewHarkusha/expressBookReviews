@@ -1,0 +1,21 @@
+{
+	"info": {
+		"_postman_id": "5e0e48f3-a05f-4b12-b3f5-7b210731e89e",
+		"name": "GitBookProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"id": "8742809e-ba3a-47e1-b69f-eb21df6789e6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
