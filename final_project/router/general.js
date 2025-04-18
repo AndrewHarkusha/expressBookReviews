@@ -26,9 +26,16 @@ public_users.post("/register", (req,res) => {
   }
 
 // Get the book list available in the shop
-public_users.get('/',function (req, res) {
+public_users.get('/', async function (req, res) {
   //Write your code here
-  return res.status(300).json({message: "Yet to be implemented"});
+  console.log('hello m here');
+  axios.get('http://localhost:5000/books').then(
+    (responseBooks)=>{
+      return res.status(200).send(JSON.stringify(responseBooks.data,null , 4));
+    }
+  ).catch(e=>
+    res.status(404).send("cant get books <br>  "+ e)
+    )
 });
 
 // Get book details based on ISBN
