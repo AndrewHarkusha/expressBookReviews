@@ -4,7 +4,7 @@ let books = require("./booksdb.js");
 const regd_users = express.Router();
 const axios = require("axios")
 
-let users = [{ username: "alaa", password: "blue" }];
+let users = [{ username: "suser", password: "x3mpass" }];
 
 const isValid = (username)=>{ //returns boolean
 //write code to check is the username is valid
