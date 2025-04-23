@@ -30,8 +30,7 @@ public_users.post("/register", (req,res) => {
 
 // Get the book list available in the shop
 public_users.get('/', async function (req, res) {
-  //Write your code here
-  console.log('hello m here');
+  console.log('Hello I am here');
   axios.get('http://localhost:5000/books').then(
     (responseBooks)=>{
       return res.status(200).send(JSON.stringify(responseBooks.data,null , 4));
