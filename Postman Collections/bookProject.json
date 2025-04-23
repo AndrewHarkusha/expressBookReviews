@@ -12,9 +12,9 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
-				"url": "http://localhost:5000/"
+				"url": "http://localhost:5000/register"
 			},
 			"response": []
 		}
