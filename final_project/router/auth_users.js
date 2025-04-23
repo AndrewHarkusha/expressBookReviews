@@ -22,7 +22,7 @@ const authenticatedUser = (username,password)=>{ //returns boolean
 regd_users.post("/login", (req,res) => {
   //Write your code here
   console.log(req.body)
-
+  console.log("Login OK")
   let username = req.body.username;
   let password = req.body.password;
   if(username && password){
